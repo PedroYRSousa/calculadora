@@ -1,0 +1,132 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  outline: none;
+  box-sizing: border-box;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 75%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+div#screen {
+  height: 100px;
+
+  padding: 10px;
+  text-align: end;
+  font-size: 450%;
+
+  user-select: all;
+  color: white;
+  background-color: grey;
+}
+
+div#keyboard-memory {
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: grey;
+}
+
+button.keyboard-memory-button {
+  width: 100px;
+  height: 100%;
+
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button.keyboard-memory-button:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+button.keyboard-memory-button:active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+div#keyboard {
+  display: grid;
+
+  padding: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+
+  background-color: grey;
+}
+
+button.keyboard-button {
+  height: 100%;
+  aspect-ratio: 5/2.5;
+
+  font-size: 200%;
+  text-size-adjust: 150%;
+
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button.keyboard-button:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+button.keyboard-button:active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+@media only screen and (max-height: 800px) {
+  main {
+    width: 90%;
+    height: fit-content;
+  }
+
+  div#screen {
+    height: 75px;
+    font-size: 300%;
+  }
+
+  div#keyboard-memory {
+    height: 50px;
+  }
+
+  div#keyboard {
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+  }
+}
