@@ -2,49 +2,50 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
     <title>Calculadora</title>
   </head>
   <body>
     <main>
       <section>
-        <div id="screen">0</div>
+        <div id="screen"></div>
         <div id="keyboard-memory">
-          <button class="keyboard-memory-button">MC</button>
-          <button class="keyboard-memory-button">MR</button>
-          <button class="keyboard-memory-button">M+</button>
-          <button class="keyboard-memory-button">M-</button>
-          <button class="keyboard-memory-button">MS</button>
+          <button disabled class="keyboard-memory-button">MC</button>
+          <button disabled class="keyboard-memory-button">MR</button>
+          <button disabled class="keyboard-memory-button">M+</button>
+          <button disabled class="keyboard-memory-button">M-</button>
+          <button disabled class="keyboard-memory-button">MS</button>
         </div>
         <div id="keyboard">
-          <button class="keyboard-button">%</button>
-          <button class="keyboard-button">CE</button>
-          <button class="keyboard-button">C</button>
-          <button class="keyboard-button">&#x232b;</button>
+          <button id='button-percent' disabled class="keyboard-button"></button>
+          <button id='button-ce' disabled class="keyboard-button"></button>
+          <button id='button-c' onclick="clearScreen()" class="keyboard-button">C</button>
+          <button id='button-back' onclick="clearLastInput()" class="keyboard-button">&#x232b;</button>
 
-          <button class="keyboard-button">&#x215f;x</button>
-          <button class="keyboard-button">x²</button>
-          <button class="keyboard-button">²&#x221a;x</button>
-          <button class="keyboard-button">&#x00f7;</button>
+          <button id='button-inverse' disabled class="keyboard-button"></button>
+          <button id='button-pow' disabled onclick="calcPow()" class="keyboard-button"></button>
+          <button id='button-square-root' disabled onclick="calcSquareRoot()" class="keyboard-button"></button>
+          <button id='button-division' onclick="addOperator('/')" class="keyboard-button">&#x00f7;</button>
 
-          <button class="keyboard-button">7</button>
-          <button class="keyboard-button">8</button>
-          <button class="keyboard-button">9</button>
-          <button class="keyboard-button">x</button>
+          <button id='button-7' onclick="addNumber('7')" class="keyboard-button">7</button>
+          <button id='button-8' onclick="addNumber('8')" class="keyboard-button">8</button>
+          <button id='button-9' onclick="addNumber('9')" class="keyboard-button">9</button>
+          <button id='button-multiplication' onclick="addOperator('x')" class="keyboard-button">x</button>
 
-          <button class="keyboard-button">4</button>
-          <button class="keyboard-button">5</button>
-          <button class="keyboard-button">6</button>
-          <button class="keyboard-button">-</button>
+          <button id='button-4' onclick="addNumber('4')" class="keyboard-button">4</button>
+          <button id='button-5' onclick="addNumber('5')" class="keyboard-button">5</button>
+          <button id='button-6' onclick="addNumber('6')" class="keyboard-button">6</button>
+          <button id='button-subtraction' onclick="addOperator('-')" class="keyboard-button">-</button>
 
-          <button class="keyboard-button">1</button>
-          <button class="keyboard-button">2</button>
-          <button class="keyboard-button">3</button>
-          <button class="keyboard-button">+</button>
+          <button id='button-1' onclick="addNumber('1')" class="keyboard-button">1</button>
+          <button id='button-2' onclick="addNumber('2')" class="keyboard-button">2</button>
+          <button id='button-3' onclick="addNumber('3')" class="keyboard-button">3</button>
+          <button id='button-addition' onclick="addOperator('+')" class="keyboard-button">+</button>
 
-          <button class="keyboard-button">&#x00b1;</button>
-          <button class="keyboard-button">0</button>
-          <button class="keyboard-button">,</button>
-          <button class="keyboard-button">=</button>
+          <button id='button-change-sign' disabled class="keyboard-button"></button>
+          <button id='button-0' onclick="addNumber('0')" class="keyboard-button">0</button>
+          <button id='button-dot' onclick="addNumber('.')" class="keyboard-button">.</button>
+          <button id='button-equals' onclick="calc()" class="keyboard-button">=</button>
         </div>
     </main>
   </body>

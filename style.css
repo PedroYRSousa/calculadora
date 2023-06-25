@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  width: 75%;
+  width: 90%;
   height: fit-content;
 
   display: flex;
@@ -29,24 +29,36 @@ main {
 }
 
 section {
-  width: 100%;
+  width: 50%;
   height: 100%;
+
+  background-color: grey;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+button[disabled] {
+  cursor: auto;
+
+  height: 100%;
+  aspect-ratio: 5/2.5;
+
+  border-radius: 10px;
+}
+
 div#screen {
   height: 100px;
 
+  margin: 10px;
   padding: 10px;
   text-align: end;
   font-size: 450%;
 
   user-select: all;
-  color: white;
-  background-color: grey;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 div#keyboard-memory {
@@ -59,7 +71,7 @@ div#keyboard-memory {
   background-color: grey;
 }
 
-button.keyboard-memory-button {
+button.keyboard-memory-button:not([disabled]) {
   width: 100px;
   height: 100%;
 
@@ -68,11 +80,11 @@ button.keyboard-memory-button {
   background-color: rgba(0, 0, 0, 0);
 }
 
-button.keyboard-memory-button:hover {
+button.keyboard-memory-button:hover:not([disabled]) {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-button.keyboard-memory-button:active {
+button.keyboard-memory-button:active:not([disabled]) {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -87,7 +99,7 @@ div#keyboard {
   background-color: grey;
 }
 
-button.keyboard-button {
+button.keyboard-button:not([disabled]) {
   height: 100%;
   aspect-ratio: 5/2.5;
 
@@ -99,18 +111,30 @@ button.keyboard-button {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-button.keyboard-button:hover {
+button.keyboard-button:hover:not([disabled]) {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-button.keyboard-button:active {
+button.keyboard-button:active:not([disabled]) {
   background-color: rgba(255, 255, 255, 1);
+}
+
+@media only screen and (max-width: 1000px) {
+  section {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media only screen and (max-height: 800px) {
   main {
     width: 90%;
     height: fit-content;
+  }
+
+  section {
+    width: 100%;
+    height: 100%;
   }
 
   div#screen {
@@ -128,5 +152,97 @@ button.keyboard-button:active {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 2px;
+  }
+
+  #button-percent {
+  }
+  #button-ce {
+  }
+  #button-c {
+    grid-row: 1;
+    grid-column: 4;
+  }
+  #button-back {
+    grid-row: 1;
+    grid-column: 5;
+  }
+
+  #button-inverse {
+  }
+  #button-pow {
+  }
+  #button-square-root {
+  }
+  #button-division {
+    grid-row: 3;
+    grid-column: 5;
+  }
+
+  #button-7 {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  #button-8 {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  #button-9 {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  #button-multiplication {
+    grid-row: 2;
+    grid-column: 5;
+  }
+
+  #button-4 {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  #button-5 {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  #button-6 {
+    grid-row: 2;
+    grid-column: 3;
+  }
+  #button-subtraction {
+    grid-row: 3;
+    grid-column: 4;
+  }
+
+  #button-1 {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  #button-2 {
+    grid-row: 3;
+    grid-column: 2;
+  }
+  #button-3 {
+    grid-row: 3;
+    grid-column: 3;
+  }
+  #button-addition {
+    grid-row: 2;
+    grid-column: 4;
+  }
+
+  #button-change-sign {
+    grid-row: 4;
+    grid-column: 1;
+  }
+  #button-0 {
+    grid-row: 4;
+    grid-column: 2;
+  }
+  #button-dot {
+    grid-row: 4;
+    grid-column: 3;
+  }
+  #button-equals {
+    grid-row: 4;
+    grid-column: 4;
   }
 }
